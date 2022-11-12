@@ -1,3 +1,4 @@
+<!--load path to static files-->
 {% load static %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
@@ -27,32 +28,32 @@
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="nav navbar-nav">
                     <li class="">
-                        <a href="#">
+                        <a href="{% url 'index' %}">
                             Project Euler
                         </a>
                     </li>
                     <li class="">
-                        <a href="Alg_section_page/">
+                        <a href="{% url 'algorithms' %}">
                             Algorithms
                         </a>
                     </li>
                     <li class="">
-                        <a href="#">
+                        <a href="/Calc_section_page">
                             Calculus
                         </a>
                     </li>
                     <li class="">
-                        <a href="#">
+                        <a href="/DM_section_page">
                             Discrete Mathematics
                         </a>
                     </li>
                     <li class="">
-                        <a href="#">
+                        <a href="/Stats_section_page">
                             Statistics
                         </a>
                     </li>
                     <li class="">
-                        <a href="#">
+                        <a href="/LA_section_page">
                             Linear Algebra
                         </a>
                     </li>
@@ -67,23 +68,10 @@
     </nav>
 
     <body id="bg">
-        <div class="side-bar">
-            <div class="menu">
-                <div class="item"><a href="#"><i class="#"></i>Discrete Math</a></div>
-                {% for chapter in all_DM_chapters %}
-                <div class="item">
-                    <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
-                    <div class="sub-menu">
-                        {% for section in chapter.dmsection_set.all %}
-                            <a href="{{chapter.id}}/{{ section.id }}/" class="sub-item">{{ section.name }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+    {% block content %}
+    {% endblock %}
 
-    <script type="text/javascript">
+        <script type="text/javascript">
             $(document).ready(function(){
                 $('.sub-btn').click(function(){
                     $(this).next('.sub-menu').slideToggle();

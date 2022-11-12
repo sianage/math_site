@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.http import Http404
-from .models import Chapter, Section, AlgSection, AlgChapter
+from .models import (Chapter, Section, AlgChapter, AlgSection,
+                     LAChapter, LASection, CalcChapter, CalcSection, DMChapter,
+                     DMSection, StatsSection, StatsChapter)
 from django.http import HttpResponse
 
 def index(request):
@@ -27,4 +29,20 @@ def lines_plane(request, chapter_id, section_id):
 def Alg_section_page(request):
     all_Alg_chapters = AlgChapter.objects.all()
     return render(request, 'app1/Alg_section_page.html', {'all_Alg_chapters': all_Alg_chapters})
+
+def Calc_section_page(request):
+    all_Calc_chapters = CalcChapter.objects.all()
+    return render(request, 'app1/Calc_section_page.html', {'all_Calc_chapters': all_Calc_chapters})
+
+def DM_section_page(request):
+    all_DM_chapters = DMChapter.objects.all()
+    return render(request, 'app1/DM_section_page.html', {'all_DM_chapters': all_DM_chapters})
+
+def Stats_section_page(request):
+    all_Stats_chapters = StatsChapter.objects.all()
+    return render(request, 'app1/Stats_section_page.html', {'all_Stats_chapters': all_Stats_chapters})
+
+def LA_section_page(request):
+    all_LA_chapters = LAChapter.objects.all()
+    return render(request, 'app1/LA_section_page.html', {'all_LA_chapters': all_LA_chapters})
 

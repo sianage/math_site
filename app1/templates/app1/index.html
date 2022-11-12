@@ -1,76 +1,10 @@
-<!--load path to static files-->
-{% load static %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{% static 'app1/style.css' %}">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <title>Sidebar menu</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
-    </head>
+{% extends 'app1/base.html' %}
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="topNavBar">
-                <ul class="nav navbar-nav">
-                    <li class="">
-                        <a href="#">
-                            Project Euler
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="Alg_section_page/">
-                            Algorithms
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            Calculus
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            Discrete Mathematics
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            Statistics
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            Linear Algebra
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    {% block content %}
     <body id="bg">
         <div class="side-bar">
             <div class="menu">
-                <div class="item"><a href="#"><i class="#"></i>Chapters</a></div>
+                <div class="item"><a href="#"><i class="#"></i>Project Euler</a></div>
                 {% for chapter in all_chapters %}
                 <div class="item">
                     <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
@@ -83,68 +17,4 @@
                 {% endfor %}
             </div>
         </div>
-
-        <span>
-            <main class="content">
-                <span class="inner-text">
-                    Concrete Mathematics for Computer Science<br>
-
-                </span>
-                    <h4>
-                        This website is based on the book Concrete
-                        Mathematics: A Foundation for Computer Science.
-                        Each chapter is accessible from the side menu
-                        and has a page with interactive python code
-                        which implements these mathematical concepts.
-                        <br><br>
-                        <img src="https://m.media-amazon.com/images/I/61u4nLxDGPL._AC_SY780_.jpg" width="228" height="324">
-                        <br><br><br>
-                        Chapter 1: Recurrent Problems. These types of problems
-                        all have solutions which use the idea of recurrence, in
-                        which the solution to each problem depends on the solutions
-                        to smaller instances of the same problem.
-                        <br><br>
-                        Chapter 2: Sums. This section develops the notation and general
-                        techniques for working with sums.
-                        <br><br>
-                        Chapter 3: Integer Functions. Discrete mathematics primarily uses
-                        whole numbers. It is often the case that we need to convert from
-                        fractions or real numbers to integers. This section will go over
-                        these types of conversions and their interesting properties.
-                        <br><br>
-                        Chapter 4: Number Theory. This section is about the properties of
-                        integers.
-                        <br><br>
-                        Chapter 5: Binomial Coefficients. This is an important part of
-                        combinatorics. Binomial Coefficients are used to denote the
-                        number of possible ways to choose a subset of objects of a given
-                        numerosity from a larger set.
-                        <br><br>
-                        Chapter 6: Special Numbers. These are sequences of numbers which
-                        occur very frequently in mathematics and have been given special names.
-                        <br><br>
-                        Chapter 7: Generating Functions. The most powerful way to deal with
-                        sequences of numbers is to manipulate infinite series that "generate"
-                        those sequences. This section explores this concept in-depth.
-                        <br><br>
-                        Chapter 8: Discrete Probability. A discrete probability is one which
-                        can be computed by summation instead of integration.
-                        <br><br>
-                        Chapter 9: Asymptotics. When we encounter a sum or recurrence which
-                        does not have a closed-form solution, asymptotics can still tell us
-                        something about the answer.
-                    </h4>
-            </main>
-        </span>
-
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('.sub-btn').click(function(){
-                    $(this).next('.sub-menu').slideToggle();
-                    $(this).find('.dropdown').toggleClass('rotate');
-                });
-            });
-        </script>
-
-    </body>
-</html>
+    {% endblock %}

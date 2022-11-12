@@ -1,10 +1,96 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'app1/style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Sidebar menu</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
+    </head>
 
-</body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="#">
+                            Project Euler
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="Alg_section_page/">
+                            Algorithms
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Calculus
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Discrete Mathematics
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Statistics
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Linear Algebra
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body id="bg">
+        <div class="side-bar">
+            <div class="menu">
+                <div class="item"><a href="#"><i class="#"></i>Linear Algebra</a></div>
+                {% for chapter in all_LA_chapters %}
+                <div class="item">
+                    <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        {% for section in chapter.lasection_set.all %}
+                            <a href="{{chapter.id}}/{{ section.id }}/" class="sub-item">{{ section.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('.sub-btn').click(function(){
+                    $(this).next('.sub-menu').slideToggle();
+                    $(this).find('.dropdown').toggleClass('rotate');
+                });
+            });
+        </script>
+
+    </body>
 </html>
