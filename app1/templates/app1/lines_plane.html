@@ -1,0 +1,26 @@
+<h1>lines plane page</h1>
+<h3>
+    This problem is similar to the Tower of Hanoi problem in that it
+    can be reduced to a series of smaller problems whose solutions
+    are instances of the larger problem. How many slices of pizza can
+    a person obtain by making n straight cuts? More formally, what is the
+    maximum number L<sub>n</sub> of regions defined by n lines in the plane?
+    <br><br>
+    pics
+    <br><br>
+    The pattern that arises is the following:<br>
+    L<sub>0</sub> = 1
+    L<sub>1</sub> = 2
+    L<sub>2</sub> = 4
+    L<sub>3</sub> = 7
+    <br>
+    The pattern can be explained as the nth line increases the number of regions
+    by k if and only if it splits k of the old regions, and it splits k of the
+    old regions, and it splits k old regions if and only if it hits the previous
+    lines in k-1 different places. Two lines can intersect in at most one point,
+    so the new line drawn can intersect at most n-1 lines in at most n-1 points.
+    This yields the equation L<sub>n</sub> <= L<sub>n-1</sub> + n, for n > 0.
+    <br><br>
+
+</h3>
+<iframe src="https://trinket.io/embed/python/953fa4b8bb" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

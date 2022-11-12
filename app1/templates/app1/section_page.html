@@ -1,17 +1,26 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'app1/style.css' %}">
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <title>Section</title>
+        <style>
+            h1{text-align: center; color:white;}
+        </style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
     </head>
-    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp10117234.jpg');">
-        <h1>Section = {{ section.name }}</h1>
+
+    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp1927878.jpg');">
+
+        <h1 style="color:white" >{{ section.name }}</h1>
         <br><br><br>
         {% if section.name == "The Tower of Hanoi" %}
-            <iframe src="https://trinket.io/embed/python/953fa4b8bb" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            {% include 'app1/Hanoi.html' %}
+        {% elif section.name == "Lines in the Plane" %}
+            {% include 'app1/lines_plane.html' %}
         {% endif %}
     </body>
 </html>

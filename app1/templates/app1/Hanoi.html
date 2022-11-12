@@ -1,0 +1,30 @@
+<h1>Hanoi Page</h1>
+<h3 style="color:white;">
+    The Tower of Hanoi is a puzzle in which there are a number of disks
+    and three pegs. You need to move the disks from one peg to another, and
+    you aren't allowed to ever place a larger disk on top of a smaller disk.
+    <br><br>
+    This is a problem which can be broken down into multiple instances of the
+    same problem. Take, for example, the scenario where you have 2 disks. First
+    you move the top disk to an empty peg, then you move the larger disk to the
+    other peg, then you move the smaller disk on top of the larger disk again.
+    Now, if you take the scenario where you have 3 disks, first you move the
+    top (smallest) disk to a different peg, then you move the middle disk to
+    another peg, then you move the smallest disk on top of the middle disk.
+    Finally, you move the bottom (largest) disk to the empty peg. This is where
+    the problem repeats itself. The next three steps are exactly the same as the
+    previous example of 2 disks. Since this pattern repeats itself no matter how
+    many disks you have, it is a perfect candidate to be solved by recursion.
+    <br><br>
+    The general solution to this problem for n disks is as follows:
+    <br><br>
+    <ol>
+        <li>transfer every one but the largest one to a different peg (T<sub>n-1</sub> moves)</li>
+        <li>move the largest one to the empty peg (1 move)</li>
+        <li>transfer the other disks onto the largest (T<sub>n-1</sub> moves)</li>
+    </ol>
+    <br>
+    This yields a final formula of T<sub>n</sub> = 2T<sub>n-1</sub> + 1
+</h3>
+<iframe src="https://trinket.io/embed/python/db0c2ae98b" width="100%" height="356"
+        frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
