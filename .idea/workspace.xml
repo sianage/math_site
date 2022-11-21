@@ -7,15 +7,9 @@
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/Alg_section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/Alg_section_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/Calc_section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/Calc_section_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/DM_section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/DM_section_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/Hanoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/Multiples3or5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/LA_section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/LA_section_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/Stats_section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/Stats_section_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/section_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/section_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

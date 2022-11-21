@@ -103,3 +103,11 @@ ol{
     display: flex;
     justify-content: space-evenly;
 }
+
+.container{
+    padding-top: 50;
+    color: white;
+    text-align: left;
+    padding-left: 250;
+}
+
