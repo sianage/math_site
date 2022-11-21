@@ -1,16 +1,15 @@
 {% extends 'app1/base.html' %}
 
     {% block content %}
-    <body id="bg">
         <div class="side-bar">
             <div class="menu">
                 <div class="item"><a href="#"><i class="#"></i>Algorithms</a></div>
-                {% for chapter in all_Alg_chapters %}
+                {% for algchapter in all_Alg_chapters %}
                 <div class="item">
-                    <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
+                    <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{algchapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
                     <div class="sub-menu">
-                        {% for section in chapter.algsection_set.all %}
-                            <a href="{{chapter.id}}/{{ section.id }}/" class="sub-item">{{ section.name }}</a>
+                        {% for algsection in algchapter.algsection_set.all %}
+                            <a href="{{ algchapter.id }}/{{ algsection.id }}/" class="sub-item">{{ algsection.name }}</a>
                         {% endfor %}
                     </div>
                 </div>

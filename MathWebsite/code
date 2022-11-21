@@ -1,3 +1,5 @@
+views.py
+
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.http import Http404
@@ -15,13 +17,12 @@ def index(request):
     return render(request, 'app1/page1.html', {'chapter': chapter})'''
 def section_page(request, chapter_id, section_id):
     section = get_object_or_404(Section, pk=section_id)
-    chapter = get_object_or_404(Chapter, pk=chapter_id)
     print("--------------------------------index section page being accessed---------------------------------")
-    return render(request, 'app1/section_page.html', {'section': section, 'chapter': chapter})
+    return render(request, 'app1/section_page.html', {'section': section})
 '''def Hanoi(request, chapter_id, section_id):
     section = get_object_or_404(Section, pk=section_id)
-    print("--------------------------------Multiples3or5.html being rendered---------------------------------")
-    return render(request, 'app1/Multiples3or5.html', {'section': section})'''
+    print("--------------------------------Hanoi.html being rendered---------------------------------")
+    return render(request, 'app1/Hanoi.html', {'section': section})'''
 #-----------------------------------------------------------------------------------------------------------------------
 #index for algorithms
 def Alg_section_page(request):
@@ -29,20 +30,17 @@ def Alg_section_page(request):
     print("--------------------------------Alg Index being accessed---------------------------------")
     return render(request, 'app1/Alg_section_page.html', {'all_Alg_chapters': all_Alg_chapters})
 #section page for algs
-def Alg_section_page2(request, algchapter_id, algsection_id):
-    algsection = get_object_or_404(AlgSection, pk=algsection_id)
-    algchapter = get_object_or_404(AlgChapter, pk=algchapter_id)
-    print("--------------------------------alg section page being accessed---------------------------------")
-    return render(request, 'app1/Alg_section_page2.html', {'algsection': algsection, 'algchapter': algchapter})
-
-
 def Alg_code_page(request, chapter_id, section_id):
+    section = get_object_or_404(Section, pk=section_id)
+    print("--------------------------------alg section page being accessed---------------------------------")
+    return render(request, 'app1/Alg_code_page.html', {'section': section})
+'''def Alg_code_page(request, chapter_id, section_id):
     section = get_object_or_404(Section, pk=section_id)
     print("--------------------------------algorithms section page being accessed---------------------------------")
     return render(request, 'app1/section_page.html', {'algsection': section})
 def UniqueChar(request, chapter_id, section_id):
     section = get_object_or_404(Section, pk=section_id)
-    return render(request, 'app1/UniqueChar.html', {'section': section})
+    return render(request, 'app1/UniqueChar.html', {'section': section})'''
 #-----------------------------------------------------------------------------------------------------------------------
 def lines_plane(request, chapter_id, section_id):
     section = get_object_or_404(Section, pk=section_id)
@@ -59,3 +57,41 @@ def Stats_section_page(request):
 def LA_section_page(request):
     all_LA_chapters = LAChapter.objects.all()
     return render(request, 'app1/LA_section_page.html', {'all_LA_chapters': all_LA_chapters})
+urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+    path("", views.index, name="index"),
+    #path("<int:chapter_id>/", views.page1, name="page1"),
+    path("Alg_section_page/", views.Alg_section_page, name="section"),
+    path("LA_section_page/", views.LA_section_page, name="section"),
+    path("Calc_section_page/", views.Calc_section_page, name="section"),
+    path("DM_section_page/", views.DM_section_page, name="section"),
+    path("Stats_section_page/", views.Stats_section_page, name="section"),
+    path("<int:chapter_id>/<int:section_id>/", views.section_page, name="section"),
+    path("<int:chapter_id>/<int:section_id>/", views.LA_section_page, name="section"),
+    path("<int:chapter_id>/<int:section_id>/", views.Stats_section_page, name="section"),
+    path("<int:chapter_id>/<int:section_id>/", views.Calc_section_page, name="section"),
+    path("<int:chapter_id>/<int:section_id>/", views.DM_section_page, name="section"),
+    path("Alg_section_page/<int:chapter_id>/<int:section_id>/", views.Alg_code_page, name="section")
+]
+index.html
+{% extends 'app1/base.html' %}
+    {% block content %}
+    <body id="bg">
+        <div class="side-bar">
+            <div class="menu">
+                <div class="item"><a href="#"><i class="#"></i>Project Euler</a></div>
+                {% for chapter in all_chapters %}
+                <div class="item">
+                    <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>chapter.title: {{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        {% for section in chapter.section_set.all %}
+                            <a href="{{chapter.id}}/{{ section.id }}/" class="sub-item">section.name: {{ section.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}

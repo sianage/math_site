@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <title>Section</title>
+        <title>AlgSection</title>
         <style>
             h1{text-align: center; color:white;}
         </style>
@@ -13,17 +13,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
     </head>
 
-    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp7692192.jpg');">
+    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp10921343.jpg');">
 
-        <h1>Section name: {{section.name}} Chapter title: {{chapter.title}}</h1>
-        <h1>Section id: {{section.id}} Chapter id: {{chapter.id}}</h1>
+        <h1>Name: {{algsection.name}} AlgChapter title: {{algchapter.title}}</h1>
+        <h1>AlgSection id: {{algsection.id}} AlgChapter id: {{algchapter.id}}</h1>
         <br><br><br>
-        {% if chapter.id == 10 and section.id == 11 %}
-            {% include 'app1/Multiples3or5.html' %}
-        {% elif section.name == "Lines in the Plane" %}
-            {% include 'app1/lines_plane.html' %}
-        {% elif section.name == "Notation" %}
-            {% include 'app1/notation.html' %}
+
+        {% if algchapter.id == 4 and algsection.id == 6 %}
+            {% include 'app1/UniqueChar.html' %}
         {% endif %}
+
     </body>
 </html>

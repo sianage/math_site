@@ -10,7 +10,8 @@ body{
     min-height: 100vjh;
     background-size: cover;
     padding-top: 52px;
-    background-color: rgb(1,1,1);
+    background-image: url('https://wallpapercave.com/wp/wp2598963.jpg');
+    backdrop-filter: blur(6px);
 }
 
 ol{
@@ -26,6 +27,8 @@ ol{
     overflow-y: scroll;
     bottom: 0;
     left: 0;
+    backdrop-filter: blur(7px);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .side-bar .menu{
@@ -61,7 +64,7 @@ ol{
     transition: 0.3s ease;
 }
 .side-bar .menu .item .sub-menu{
-    background: rgba(255,255,255,0.1);
+    background: rgba(100,100,100,0.5);
     display: none;
 }
 
@@ -82,7 +85,6 @@ ol{
     margin-left: 300px;
     margin-right: 50px;
     height: 100vh;
-    opacity: (.1);
     color: rgba(255,255,255,1);
 }
 
@@ -93,9 +95,11 @@ ol{
 }
 
 .navbar{
-    padding-left: 100px;
     position: fixed;
     width: 100%;
+    padding-left: 250;
     top: 0;
-    left: 250;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-evenly;
 }
