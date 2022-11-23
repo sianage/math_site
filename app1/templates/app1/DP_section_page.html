@@ -1,17 +1,17 @@
 {% extends 'app1/base.html' %}
 
     {% block content %}
-    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp10616126.jpg');">
+    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp10920004.jpg');">
 
     <!-- Sidebar with chapter and section options populated from database and links to specific section page -->
         <div class="side-bar">
             <div class="menu">
-                <div class="item"><a href="#"><i class="#"></i>Discrete Math</a></div>
-                {% for chapter in all_DM_chapters %}
+                <div class="item"><a href="#"><i class="#"></i>Design Patterns</a></div>
+                {% for chapter in all_DP_chapters %}
                 <div class="item">
                     <a class="sub-btn" href="#"><i class="fas fa-calculator"></i>{{chapter.title}}<i class="fas fa-angle-right dropdown"></i></a>
                     <div class="sub-menu">
-                        {% for section in chapter.dmsection_set.all %}
+                        {% for section in chapter.dpsection_set.all %}
                             <a href="{{chapter.id}}/{{ section.id }}/" class="sub-item">{{ section.name }}</a>
                         {% endfor %}
                     </div>
@@ -21,11 +21,11 @@
         </div>
             <div class="container">
         <p>
-            <h1 align="center">Discrete Mathematics</h1><br>
+            <h1 align="center">Design Patterns</h1><br>
                 <h3 style="color:white">
-                    This section covers many topics in discrete mathematics that are relevant to computer science.
-                    The books used for the content in this section are Discrete Mathematics with Applications
-                    and Concrete Mathematics: A Foundation for Computer Science.
+                    This section covers the concepts and Python implementation of various software
+                    engineering design patterns. The patterns are taken from the book Design Patterns:
+                    Elements of Reusable Object-Oriented Software.
                 </h3>
 
                 <br><br><br>

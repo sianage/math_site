@@ -3,7 +3,7 @@ from django.template import loader
 from django.http import Http404
 from .models import (Chapter, Section, AlgChapter, AlgSection,
                      LAChapter, LASection, CalcChapter, CalcSection, DMChapter,
-                     DMSection, StatsSection, StatsChapter)
+                     DMSection, StatsSection, StatsChapter, DPChapter, DPSection)
 from django.http import HttpResponse
 #index for euler
 def index(request):
@@ -59,3 +59,6 @@ def Stats_section_page(request):
 def LA_section_page(request):
     all_LA_chapters = LAChapter.objects.all()
     return render(request, 'app1/LA_section_page.html', {'all_LA_chapters': all_LA_chapters})
+def DP_section_page(request):
+    all_DP_chapters = DPChapter.objects.all()
+    return render(request, 'app1/DP_section_page.html', {'all_DP_chapters': all_DP_chapters})

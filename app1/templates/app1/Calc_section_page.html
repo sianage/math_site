@@ -1,7 +1,9 @@
 {% extends 'app1/base.html' %}
 
     {% block content %}
-    <body id="bg">
+    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp7325917.jpg');">
+
+        <!-- Sidebar with chapter and section options populated from database and links to specific section page -->
         <div class="side-bar">
             <div class="menu">
                 <div class="item"><a href="#"><i class="#"></i>Calculus</a></div>
@@ -20,10 +22,12 @@
             <div class="container">
         <p>
             <h1 align="center">Calculus</h1><br>
-            This section spans the breadth of calculus, starting with basic derivatives
-                and ending with surface integrals, vector calculus, and differential equations.
+                <h1 style="color:white">
+                    This section spans the breadth of calculus, starting with basic derivatives
+                    and ending with surface integrals, vector calculus, and differential equations.
+                </h1>
+
             <br><br><br>
-            <img src="https://miro.medium.com/max/1400/0*B4u3Ot3ImnMhNKba.jpg" alt="Leonhard Euler" width="600" height="500">
         </p>
     </div>
     {% endblock %}

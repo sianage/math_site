@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (Chapter, Section, AlgChapter, AlgSection,
                      LAChapter, LASection, CalcChapter, CalcSection, DMChapter,
-                     DMSection, StatsSection, StatsChapter)
+                     DMSection, StatsSection, StatsChapter, DPChapter, DPSection)
 # Register your models here.
 admin.site.register(Chapter)
 admin.site.register(Section)
@@ -15,3 +15,5 @@ admin.site.register(StatsSection)
 admin.site.register(StatsChapter)
 admin.site.register(LASection)
 admin.site.register(LAChapter)
+admin.site.register(DPChapter)
+admin.site.register(DPSection)

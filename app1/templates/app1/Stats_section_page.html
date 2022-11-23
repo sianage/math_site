@@ -1,7 +1,8 @@
 {% extends 'app1/base.html' %}
 
     {% block content %}
-    <body id="bg">
+    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp7429585.png');">
+    <!-- Sidebar with chapter and section options populated from database and links to specific section page -->
         <div class="side-bar">
             <div class="menu">
                 <div class="item"><a href="#"><i class="#"></i>Statistics & Probability</a></div>
@@ -19,11 +20,13 @@
         </div>
             <div class="container">
         <p>
-            <h1 align="center">Statistics</h1><br>
-            This section is dedicated to the field of statistics and probability and its
-                applications for computer science.
+            <h1 align="center" style="color:black">Statistics</h1><br>
+                <h3 style="color:black">
+                    This section is dedicated to the field of statistics and probability and its
+                    applications for computer science.
+                </h3>
+
             <br><br><br>
-            <img src="https://journalajpas.com/public/journals/50/homepageImage_en_US.png" alt="Leonhard Euler" width="800" height="400">
         </p>
     </div>
     {% endblock %}

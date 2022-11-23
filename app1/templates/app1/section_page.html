@@ -13,17 +13,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
     </head>
 
-    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp7692192.jpg');">
+    <body id="bg" style="background-image: url('https://www.historyhit.com/app/uploads/2022/08/Leonhard_Euler-Cover-Image.jpg');">
 
-        <h1>Section name: {{section.name}} Chapter title: {{chapter.title}}</h1>
-        <h1>Section id: {{section.id}} Chapter id: {{chapter.id}}</h1>
+
         <br><br><br>
         {% if chapter.id == 10 and section.id == 11 %}
             {% include 'app1/Multiples3or5.html' %}
-        {% elif section.name == "Lines in the Plane" %}
-            {% include 'app1/lines_plane.html' %}
-        {% elif section.name == "Notation" %}
-            {% include 'app1/notation.html' %}
         {% endif %}
     </body>
 </html>

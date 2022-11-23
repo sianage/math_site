@@ -1,5 +1,7 @@
 {% extends 'app1/base.html' %}
     {% block content %}
+    <body id="bg" style="background-image: url('https://www.historyhit.com/app/uploads/2022/08/Leonhard_Euler-Cover-Image.jpg');">
+    <!-- Sidebar with chapter and section options populated from database and links to specific section page -->
         <div class="side-bar">
             <div class="menu">
                 <div class="item"><a href="#"><i class="#"></i>Project Euler</a></div>
@@ -15,15 +17,18 @@
                 {% endfor %}
             </div>
         </div>
+
+
     <div class="container">
         <p>
             <h1 align="center">Project Euler</h1><br>
-            This section is dedicated to the various problems on Project Euler (<a href="https://projecteuler.net/">link to site</a>)
-            These problems require an application of many different concepts in mathematics and
-            computer science to solve. The problems are classified by difficulty as a percent
-            (5% being the easiest, 10% being second easiest, etc).
+            <h3 style="color:white">
+                This section is dedicated to the various problems on Project Euler (<a href="https://projecteuler.net/">link to site</a>)
+                These problems require an application of many different concepts in mathematics and
+                computer science to solve. The problems are classified by difficulty as a percent
+                (5% being the easiest, 10% being second easiest, etc).
+            </h3>
             <br><br><br>
-            <img src="https://www.historyhit.com/app/uploads/2022/08/Leonhard_Euler-Cover-Image.jpg" alt="Leonhard Euler">
         </p>
     </div>
     {% endblock %}

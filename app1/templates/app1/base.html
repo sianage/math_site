@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
     </head>
-
+    <!-- Navigation bar collapse if it doesn't fir the window size -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-
+            <!-- Navigation bar with subject options -->
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="nav navbar-nav">
                     <li class="">
@@ -59,8 +59,8 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="/">
-                            Home
+                        <a href="/DP_section_page">
+                            Design Patterns
                         </a>
                     </li>
                 </ul>
@@ -68,10 +68,9 @@
         </div>
     </nav>
 
-    <body id="bg" style="background-image: url('https://wallpapercave.com/wp/wp2921775.jpg');">
     {% block content %}
     {% endblock %}
-
+        <!-- Javascript for sidebar selection options-->
         <script type="text/javascript">
             $(document).ready(function(){
                 $('.sub-btn').click(function(){

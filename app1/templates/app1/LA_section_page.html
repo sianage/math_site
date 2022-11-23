@@ -1,7 +1,9 @@
 {% extends 'app1/base.html' %}
 
     {% block content %}
-    <body id="bg">
+    <body id="bg" style="background-image: url('https://learning.samatrix.io/asset-v1:SamatriX+LA101+2020_T3+type@asset+block@LA-course-image.png');">
+
+    <!-- Sidebar with chapter and section options populated from database and links to specific section page -->
         <div class="side-bar">
             <div class="menu">
                 <div class="item"><a href="#"><i class="#"></i>Linear Algebra</a></div>
@@ -20,10 +22,12 @@
             <div class="container">
         <p>
             <h1 align="center">Linear Algebra</h1><br>
-            This section is dedicated to linear algebra and its applications to areas that are
-                relevant for computer science.
+                <h3 style="color:white">
+                    This section is dedicated to linear algebra and its applications to areas that are
+                    relevant for computer science.
+                </h3>
+
             <br><br><br>
-            <img src="https://i.ytimg.com/vi/0WDhKCPtbng/maxresdefault.jpg" alt="Leonhard Euler" height="500" width="800">
         </p>
     </div>
     {% endblock %}
